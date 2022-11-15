@@ -1,0 +1,20 @@
+#g - это размер, h - это скорость
+g = 15.8
+h = 113
+# Решение
+#def - функция
+def upwards(y):
+    if int(y * 10 % 10) == 0:
+        if (y * 100 % 10) < 5:
+            return int(y)
+        else:
+            return int(y) + 0.1
+    else:
+        y *= 100
+        if y % 10 <= 5:
+            y /= 100
+            y = round(y + 0.1, 1)
+            return y
+        else:
+            return round(y / 100, 1)
+print(upwards(y=int((g * (2 ** 30)) / (h * 1000 * 125) / 60 * 100) / 100), "\n")
